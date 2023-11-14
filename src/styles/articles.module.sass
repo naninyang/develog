@@ -30,14 +30,25 @@
     +mq(minXsmall)
       font-size: rem(22)
 
-  time
-    display: block
-    opacity: .7
+  .util
+    display: flex
+    justify-content: space-between
     margin: rem(10) 0 rem(25)
-    font-size: rem(12)
 
     +mq(minXsmall)
       margin: rem(20) 0 rem(70)
+
+    time
+      display: block
+      opacity: .7
+      font-size: rem(12)
+
+      +mq(minXsmall)
+        font-size: rem(14)
+
+    a
+      color: $color-background
+      text-decoration: none
       font-size: rem(14)
 
     + picture

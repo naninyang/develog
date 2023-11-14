@@ -36,8 +36,10 @@ export const DevelogTemplate = ({
         {helmet || ''}
         <h1>{title}</h1>
         <small>{description}</small>
-        <time>{date}</time>
-        <a href={`/admin/#/collections/develog/entries/${id}`}>수정</a>
+        <div className={styles.util}>
+          <time>{date}</time>
+          <a href={`/admin/#/collections/develog/entries/${id}`}>수정</a>
+        </div>
         {featuredimage && (
           <PreviewCompatibleImage
             imageInfo={{
