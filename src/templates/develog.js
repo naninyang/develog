@@ -27,6 +27,7 @@ export const DevelogTemplate = ({
   prevPostURL,
   nextPostTitle,
   prevPostTitle,
+  id,
 }) => {
   const PostContent = contentComponent || Content;
   return (
@@ -36,6 +37,7 @@ export const DevelogTemplate = ({
         <h1>{title}</h1>
         <small>{description}</small>
         <time>{date}</time>
+        <a href={`/admin/#/collections/develog/entries/${id}`}>수정</a>
         {featuredimage && (
           <PreviewCompatibleImage
             imageInfo={{
@@ -99,6 +101,7 @@ const Develog = ({ data }) => {
             <meta property="og:type" content="article" />
           </Helmet>
         }
+        id={post.frontmatter.created}
         featuredimage={post.frontmatter.featuredimage}
         date={post.frontmatter.date}
         series={post.frontmatter.series}
