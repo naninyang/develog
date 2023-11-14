@@ -13,7 +13,7 @@ module.exports = {
       options: {
         host: 'https://develog.dev1stud.io',
         sitemap: 'https://develog.dev1stud.io/sitemap.xml',
-        policy: [{ userAgent: '*', disallow: ['/naver*', '/twitter*', '/youtube*'] }],
+        policy: [{ userAgent: '*' }],
       },
     },
     {
