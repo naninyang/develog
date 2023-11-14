@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "develog",
+  "description": "DEV1L.studio develog",
+  "version": "1.0.0",
+  "author": "O612",
   "dependencies": {
     "@deckdeckgo/highlight-code": "^3.6.0",
     "@emotion/react": "^11.9.0",
