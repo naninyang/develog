@@ -1,0 +1,156 @@
+@import './design-system.sass'
+
+$thumbnail-vertical: 630
+$thumbnail-horizontal: 1200
+
+.mainPage
+  overflow: hidden
+
+  nav
+    margin-top: rem(50)
+    text-align: center
+
+    +mq(minXsmall)
+      margin-top: rem(100)
+
+    li
+      display: inline-flex
+
+      &:nth-of-type(1) a
+        border-radius: rem(5) 0 0 rem(5)
+        border-right: rem(1)
+
+      &:nth-of-type(2) a
+        border-radius: 0 rem(5) rem(5) 0
+        border-left: rem(1)
+
+      a
+        border: rem(2) solid $color-yellow
+        padding: rem(10) rem(30)
+
+        +mq(maxTablet)
+          font-size: rem(12)
+
+        +mq(minXsmall)
+          padding: rem(15) rem(50)
+
+  h2
+    margin-top: rem(25)
+    font-weight: 700
+    font-size: rem(20)
+    color: $color-yellow
+
+    +mq(minXsmall)
+      margin-top: rem(75)
+      font-size: rem(28)
+
+    em
+      font-size: rem(16)
+      font-style: normal
+
+      +mq(minXsmall)
+        font-size: rem(20)
+
+    + ul
+      padding-top: rem(25)
+
+      +mq(minXsmall)
+        padding-top: rem(50)
+
+.homeList, .mainPage > ul
+  display: flex
+  flex-wrap: wrap
+  margin: 0 rem(-15)
+  padding-top: rem(25)
+
+  +mq(minXsmall)
+    padding-top: rem(75)
+
+  li
+    padding: 0 rem(15)
+    width: 50%
+
+    a
+      display: flex
+      flex-direction: column
+      padding-bottom: rem(25)
+      color: $color-light
+
+      +mq(minXsmall)
+        padding-bottom: rem(50)
+
+      &:hover, &:focus
+        img
+          transform: scale(1.1)
+
+        strong
+          text-decoration: underline
+
+      .listThumbnail
+        position: relative
+        overflow: hidden
+
+        > div
+          display: block
+          aspect-ratio: 1.90476 / 1
+
+        img
+          width: 100%
+
+        img
+          +not-supports-aspect-ratio-box($thumbnail-horizontal, $thumbnail-vertical)
+          image-rendering: -webkit-optimize-contrast
+          backface-visibility: hidden
+          object-fit: cover
+          transition: .15s linear
+
+        span
+          position: absolute
+          background-color: rgba($color-mint, .9)
+          display: inline-block
+          top: rem(10)
+          left: rem(10)
+          padding: rem(5) rem(10)
+          border-radius: rem(2)
+          +font-weight(bold)
+          font-size: rem(12)
+          color: $color-dark
+
+      strong
+        +mixin(ellipsis)
+        margin: rem(10) 0
+        font-size: rem(14)
+        font-weight: 700
+
+        +mq(minXsmall)
+          margin: rem(15) 0
+          font-size: rem(18)
+
+        em
+          font-size: rem(12)
+          font-style: normal
+
+          +mq(minXsmall)
+            font-size: rem(14)
+
+      p
+        +clamp(3, 40, 1.35)
+        margin-bottom: rem(15)
+        max-height: none
+        height: rem(40)
+        font-size: rem(10)
+        font-weight: 400
+        opacity: .7
+
+        +mq(minXsmall)
+          +clamp(3, 56, 1.35)
+          margin-bottom: rem(15)
+          height: rem(56)
+          font-size: rem(14)
+
+      time
+        font-size: rem(10)
+        opacity: .5
+
+        +mq(minXsmall)
+          font-size: rem(12)

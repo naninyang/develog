@@ -1,0 +1,142 @@
+@use 'sass:math'
+
+$padding-horizontal: 25
+$browser-context: 16
+
+$color-dark: #171717
+$color-light: #eaffff
+$color-yellow: #ffd800
+$color-mint: #89ddff
+$color-background: #212121
+
+@function rem($pixel, $context: $browser-context)
+  @return #{math.div($pixel, $context)}rem
+
+@function em($pixel, $context: $browser-context)
+  @return #{math.div($pixel, $context)}em
+
+=not-supports-aspect-ratio
+  @supports not (aspect-ratio: 1)
+    @content
+
+=not-supports-aspect-ratio-box($horizontal, $vertical)
+  aspect-ratio: #{math.div($horizontal, $vertical)}
+  display: block
+  width: 100%
+  height: auto
+
+  +not-supports-aspect-ratio
+    &::before
+      content: ''
+      float: left
+      margin-left: -1px
+      padding-top: percentage #{math.div($vertical, $horizontal)}
+      width: 1px
+
+    &::after
+      content: ''
+      display: block
+      clear: both
+
+=mq($mediaquery)
+  @if $mediaquery == maxMobile
+    @media screen and (max-width: rem(480))
+      @content
+
+  @if $mediaquery == minTablet
+    @media screen and (min-width: rem(481))
+      @content
+
+  @if $mediaquery == maxTablet
+    @media screen and (max-width: rem(768))
+      @content
+
+  @if $mediaquery == minXsmall
+    @media screen and (min-width: rem(769))
+      @content
+
+=font-weight($weight)
+  @if $weight == thin
+    font-weight: 100
+
+  @if $weight == extraLight
+    font-weight: 200
+
+  @if $weight == light
+    font-weight: 300
+
+  @if $weight == regular
+    font-weight: 400
+
+  @if $weight == medium
+    font-weight: 500
+
+  @if $weight == semiBold
+    font-weight: 600
+
+  @if $weight == bold
+    font-weight: 700
+
+  @if $weight == extraBold
+    font-weight: 800
+
+  @if $weight == black
+    font-weight: 900
+
+=mixin($style)
+  @if $style == widthSettings
+    margin: 0 auto
+    width: 100%
+    max-width: rem(770)
+
+  @if $style == col
+    display: block
+    flex: 1 0 0%
+    width: 100%
+    max-width: 100%
+
+  @if $style == colAuto
+    flex: 0 0 auto
+    width: auto
+
+  @if $style == ellipsis
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  @if $style == clearfix
+    &::after
+      display: block
+      clear: both
+      content: ''
+
+  @if $style == screenReaderOnly
+    position: absolute
+    overflow: hidden
+    margin: 0
+    width: 1px
+    height: 1px
+    clip: rect(1px, 1px, 1px, 1px)
+
+  @if $style == visuallyHiddenFocuable
+    position: absolute
+    overflow: hidden
+    z-index: 20
+    margin: 0
+    width: auto
+    height: auto
+    clip: auto
+
+  @if $style == imageRendering
+    image-rendering: -webkit-optimize-contrast
+    transform: translateZ(0)
+    backface-visibility: hidden
+
+=clamp($line, $maxheight, $lineheight)
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: $line
+  max-height: rem($maxheight)
+  line-height: $lineheight

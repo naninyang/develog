@@ -1,0 +1,45 @@
+@import './design-system.sass'
+
+.profile
+  display: flex
+
+  i
+    display: block
+    border-radius: 100%
+    width: rem(90)
+    height: rem(90)
+    background: url(https://avatars.githubusercontent.com/u/6149100?v=4) no-repeat 50% 50%/cover
+
+    +mq(minXsmall)
+      width: rem(120)
+      height: rem(120)
+
+  .profileContents
+    +mixin(col)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: rem(10)
+
+    +mq(minXsmall)
+      padding-left: rem(15)
+
+    cite
+      +font-weight(bold)
+      font-size: rem(16)
+
+      +mq(minXsmall)
+        font-size: rem(20)
+
+    p
+      margin-top: rem(5)
+      +font-weight(thin)
+      font-size: rem(12)
+      line-height: 1.5
+
+      +mq(minXsmall)
+        margin-top: rem(10)
+        font-size: rem(14)
+
+      span
+        display: block
