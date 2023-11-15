@@ -11,6 +11,7 @@ import Pager from '../components/Pager';
 import * as styles from '../styles/articles.module.sass';
 import '@deckdeckgo/highlight-code';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+import PostComment from '../components/utterance';
 deckDeckGoHighlightElement();
 
 // eslint-disable-next-line
@@ -54,6 +55,7 @@ export const DevelogTemplate = ({
         <PostContent content={content} />
         <strong className={styles['articleFIN']}>FIN!</strong>
       </article>
+      <PostComment />
       <aside>
         <Profile />
       </aside>
