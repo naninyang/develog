@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../../components/Layout';
 import * as styles from '../../styles/projects.module.sass';
-// import PostComment from '../components/utilities/utterances';
 
 const ProjectsPage = () => {
   const siteAddress = `https://develog.dev1stud.io/`;

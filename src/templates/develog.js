@@ -11,7 +11,7 @@ import Pager from '../components/Pager';
 import * as styles from '../styles/articles.module.sass';
 import '@deckdeckgo/highlight-code';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-import PostComment from '../components/utterance';
+import PostComment from '../components/PostComment';
 deckDeckGoHighlightElement();
 
 // eslint-disable-next-line
