@@ -25,7 +25,7 @@ const PostComment = () => {
     }
   }, []);
 
-  return <div className="post-comment" ref={ref} />;
+  return <div className="post-comment" data-comment ref={ref} />;
 };
 
 export default PostComment;

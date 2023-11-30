@@ -7,13 +7,6 @@
   +mq(minXsmall)
     padding-top: rem(50)
 
-  + aside
-    padding: 0 rem(25) rem(25)
-
-    +mq(minXsmall)
-      +mixin(widthSettings)
-      padding-bottom: rem(50)
-
   h1
     font-weight: 900
     font-size: rem(28)
@@ -190,6 +183,13 @@
     padding: 0 rem(5)
     font-family: 'fira-code', Courier, monospace
     color: $color-light
+
+  + div[data-comment] + aside
+    padding: 0 rem(25) rem(25)
+
+    +mq(minXsmall)
+      +mixin(widthSettings)
+      padding-bottom: rem(50)
 
 .pagerContainer
   display: flex
