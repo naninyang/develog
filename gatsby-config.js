@@ -97,11 +97,5 @@ module.exports = {
         mergeSecurityHeaders: false, // boolean to turn off the default security headers
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `G-TMB7WVNG1X`,
-      },
-    },
   ],
 };
