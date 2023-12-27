@@ -85,6 +85,7 @@ const Develog = ({ data }) => {
   const thisEdge = allPosts.edges.find((edge) => edge.node.id === post.id);
   return (
     <Layout>
+      {console.log('post.frontmatter: ', post.frontmatter)}
       <DevelogTemplate
         content={post.html}
         contentComponent={HTMLContent}
