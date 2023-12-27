@@ -85,7 +85,6 @@ const Develog = ({ data }) => {
   const thisEdge = allPosts.edges.find((edge) => edge.node.id === post.id);
   return (
     <Layout>
-      {console.log('post.frontmatter: ', post.frontmatter)}
       <DevelogTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -99,7 +98,7 @@ const Develog = ({ data }) => {
             <meta property="og:url" content={`${siteAddress}develog/${post.frontmatter.created}`} />
             <meta
               property="og:image"
-              content={`${siteAddress}develog/${post.frontmatter.created}-summary.webp?ts=${timestamp}`}
+              content={`${post.frontmatter.featuredimage.childImageSharp.gatsbyImageData.images.fallback.src}`}
             />
             <link rel="canonical" href={`${siteAddress}develog/${post.frontmatter.created}`} />
             <link rel="alternate" href={`${siteAddress}develog/${post.frontmatter.created}`} hrefLang="ko-KR" />
