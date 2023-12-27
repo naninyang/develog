@@ -98,7 +98,7 @@ const Develog = ({ data }) => {
             <meta property="og:url" content={`${siteAddress}develog/${post.frontmatter.created}`} />
             <meta
               property="og:image"
-              content={`${siteAddress}img/${post.frontmatter.created}-summary.webp?ts=${timestamp}`}
+              content={`${siteAddress}develog/${post.frontmatter.created}-summary.webp?ts=${timestamp}`}
             />
             <link rel="canonical" href={`${siteAddress}develog/${post.frontmatter.created}`} />
             <link rel="alternate" href={`${siteAddress}develog/${post.frontmatter.created}`} hrefLang="ko-KR" />
