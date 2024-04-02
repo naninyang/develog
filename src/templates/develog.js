@@ -81,7 +81,6 @@ DevelogTemplate.propTypes = {
 const Develog = ({ data }) => {
   const { markdownRemark: post, allMarkdownRemark: allPosts } = data;
   const siteAddress = `https://develog.dev1stud.io/`;
-  const timestamp = Date.now();
   const thisEdge = allPosts.edges.find((edge) => edge.node.id === post.id);
   return (
     <Layout>
